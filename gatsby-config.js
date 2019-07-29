@@ -6,11 +6,24 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          'material icons',
+          {
+            family: `Darker Grotesque`,
+            variants: [`300`, `400`]
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
