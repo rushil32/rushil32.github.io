@@ -15,16 +15,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          'material icons',
-          {
-            family: `Darker Grotesque`,
-            variants: [`300`, `400`]
-          },
+          `material icons`,
+          `Darker Grotesque\:300,400`
         ],
-      },
+        display: 'swap'
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
