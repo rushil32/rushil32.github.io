@@ -1,0 +1,32 @@
+@import '../../styles/base.scss';
+
+.container {
+  padding: 30px 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+  margin: 0 40px;
+}
+
+.link {
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  font-size: $font-sm;
+  color: $grey-900;
+  font-weight: 600;
+  margin: 0 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+
+  &:hover,
+  &:global(.active) {
+    border-bottom: 2px solid map-get($theme-colors, primary);
+    color: map-get($theme-colors, primary);
+  }
+}

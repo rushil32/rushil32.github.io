@@ -7,25 +7,33 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import Nav from '../nav';
+import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  const navLinks = [
+    {
+      text: 'Me',
+      url: '/',
+    },
+    {
+      text: 'Library',
+      url: '/library',
+    },
+    {
+      text: 'Blog',
+      url: '/blog',
+    },
+    {
+      text: 'About',
+      url: '/about',
     }
-  `)
+  ]
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <div>
+      <Nav links={navLinks} logo={toriiLogo} />
       <div
         style={{
           margin: `0 auto`,
@@ -36,12 +44,10 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()} Because 42
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 

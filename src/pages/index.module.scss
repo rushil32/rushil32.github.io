@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@import '../styles/base';
 
 .container {
   display: flex;
@@ -12,37 +12,29 @@
 
   img {
     height: 100px;
+    @include animate('fadeIn');
   }
 
-  h1,
-  p {
-    font-weight: 400;
+  h1 {
     margin: 0;
+    @include animate('fadeInUp');
   }
+}
 
-  p {
-    margin-top: 1rem;
-    opacity: 0.7;
-  }
+.subheader {
+  margin-top: 1rem;
+  font-size: $font-md;
+  @include animate('fadeInUp');
+}
 
-  ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-  }
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  @include animate('fadeInUp', 0.3s);
 
   li {
-    padding: 0 10px;
-    font-size: $font-small;
-  }
-  
-  a {
-    text-decoration: none;
-    opacity: 0.5;
-    color: black;
-
-    &:hover {
-      opacity: 0.7;
-    }
+    padding: 0 25px;
+    font-size: $font-sm;
   }
 }

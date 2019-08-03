@@ -1,0 +1,10 @@
+@mixin animate($animation, $delay: 0s, $duration: 1s) {
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: $animation;
+  animation-name: $animation;
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay
+}
