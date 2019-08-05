@@ -6,20 +6,24 @@ import indexStyles from "./index.module.scss"
 import githubIcon from "../images/logos/github.svg"
 import linkedinIcon from "../images/logos/linkedin.svg"
 import behanceIcon from "../images/logos/behance.svg"
+import speechIcon from "../images/icons/speech.svg"
+import ramenIcon from "../images/icons/ramen.svg"
 import resume from "./resume.pdf"
 
-function renderLink(icon, url = "") {
+function renderLink(icon, text, url = "") {
   return (
     <a href={url} className="no-hover" target="_blank">
       <img src={icon} />
+      <span>{text}</span>
     </a>
   )
 }
 
-function renderInternalLink(text, url = "") {
+function renderInternalLink(icon, text, url = "") {
   return (
     <Link className="no-hover" to={url}>
-      {text[0]}
+      <img src={icon} />
+      <span>{text}</span>
     </Link>
   )
 }
@@ -33,17 +37,19 @@ const IndexPage = () => (
         <div className={indexStyles.subheader}>
           Frontend Software Engineer, UI Designer
         </div>
+        <p>rushil32@gmail.com</p>
       </div>
       <div className={indexStyles.links}>
-        {renderLink(githubIcon, "https://github.com/rushil32")}
+        {renderLink(githubIcon, "GitHub", "https://github.com/rushil32")}
         {renderLink(
           linkedinIcon,
+          "LinkedIn",
           "https://www.linkedin.com/in/rushil-saraogi-37184969/"
         )}
-        {renderInternalLink("Library", "/library")}
-        {renderInternalLink("Blog", "/blog")}
-        {renderLink(behanceIcon, "https://www.behance.net/rushil")}
-        {renderLink(behanceIcon, resume)}
+        {renderInternalLink(ramenIcon, "RamenUI", "/library")}
+        {renderInternalLink(speechIcon, "Blog", "/blog")}
+        {renderLink(behanceIcon, "Behance", "https://www.behance.net/rushil")}
+        {renderLink(behanceIcon, "Resume", resume)}
       </div>
     </div>
   </Layout>
