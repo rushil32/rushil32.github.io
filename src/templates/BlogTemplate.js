@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from  '../components/layout';
 import { graphql } from "gatsby"
+import styles from './styles/BlogTemplate.module.scss';
 
 export default function Template({
   data,
@@ -11,10 +12,10 @@ export default function Template({
     <Layout>
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <p>{frontmatter.date}</p>
+          <h1 className={styles.header}>{frontmatter.title}</h1>
+          <p className={styles.date}>{frontmatter.date}</p>
           <div
-            className="blog-post-content"
+            className={styles.content}
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>

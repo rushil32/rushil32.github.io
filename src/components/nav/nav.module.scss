@@ -1,7 +1,11 @@
-@import '../../styles/base.scss';
+@import '../../styles/lib';
 
 .container {
   padding: 30px 10px;
+
+  li {
+    margin: 0;
+  }
 }
 
 .menu {
@@ -13,6 +17,10 @@
 .logo {
   height: 80px;
   margin: 0 40px;
+
+  @include breakpoint(xs) {
+    display: none;
+  }
 }
 
 .link {

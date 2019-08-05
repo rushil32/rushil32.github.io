@@ -1,15 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import Banner from '../../components/banner'
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import ramenIcon from '../../images/icons/ramen.svg'
+import styles from './styles/index.module.scss'
 
 const SecondPage = () => (
   <Layout header="Ramen UI">
     <SEO title="Page two" />
-    <h1>Hi from the about page page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Banner>
+      <img className={styles.headerIcon} src={ramenIcon} />
+      <h1>RamenUI</h1>
+    </Banner>
   </Layout>
 )
 

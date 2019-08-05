@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import Nav from '../nav';
 import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
+import "../../styles/base.scss"
 
 const Layout = ({ children }) => {
   const navLinks = [
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
       url: '/',
     },
     {
-      text: 'Library',
+      text: 'Ramen UI',
       url: '/library',
     },
     {
@@ -26,8 +27,8 @@ const Layout = ({ children }) => {
       url: '/blog',
     },
     {
-      text: 'About',
-      url: '/about',
+      text: 'Picks',
+      url: '/picks',
     }
   ]
 

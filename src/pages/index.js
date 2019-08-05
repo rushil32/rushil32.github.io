@@ -1,49 +1,52 @@
 import React from "react"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
-import torii from "../images/logos/torii-color.svg"
-import "../styles/base.scss"
+import Layout from "../components/layout"
 import indexStyles from "./index.module.scss"
+import githubIcon from "../images/logos/github.svg"
+import linkedinIcon from "../images/logos/linkedin.svg"
+import behanceIcon from "../images/logos/behance.svg"
+import resume from "./resume.pdf"
 
-function renderLink(text, url = "") {
+function renderLink(icon, url = "") {
   return (
-    <li>
-      <a href={url} target="_blank">
-        {text}
-      </a>
-    </li>
+    <a href={url} className="no-hover" target="_blank">
+      <img src={icon} />
+    </a>
   )
 }
 
 function renderInternalLink(text, url = "") {
   return (
-    <li>
-      <Link to={url}>{text}</Link>
-    </li>
+    <Link className="no-hover" to={url}>
+      {text[0]}
+    </Link>
   )
 }
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <SEO title="Home" />
     <div className={indexStyles.container}>
       <div className={indexStyles.info}>
-        <img src={torii} />
         <h1>Rushil Saraogi</h1>
-        <div className={indexStyles.subheader}>Frontend Software Engineer, UI Designer</div>
-        <ul className={indexStyles.links}>
-          {renderLink("GitHub", "https://github.com/rushil32")}
-          {renderLink(
-            "LinkedIn",
-            "https://www.linkedin.com/in/rushil-saraogi-37184969/"
-          )}
-          {renderInternalLink("Library", '/library')}
-          {renderInternalLink("Blog", '/blog')}
-          {renderLink("Behance", "https://www.behance.net/rushil")}
-        </ul>
+        <div className={indexStyles.subheader}>
+          Frontend Software Engineer, UI Designer
+        </div>
+      </div>
+      <div className={indexStyles.links}>
+        {renderLink(githubIcon, "https://github.com/rushil32")}
+        {renderLink(
+          linkedinIcon,
+          "https://www.linkedin.com/in/rushil-saraogi-37184969/"
+        )}
+        {renderInternalLink("Library", "/library")}
+        {renderInternalLink("Blog", "/blog")}
+        {renderLink(behanceIcon, "https://www.behance.net/rushil")}
+        {renderLink(behanceIcon, resume)}
       </div>
     </div>
-  </div>
+  </Layout>
 )
 
 export default IndexPage

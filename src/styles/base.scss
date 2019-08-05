@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import 'variables';
+@import 'lib';
 @import 'typography';
 @import 'animate';
-@import 'mixins';
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+p {
   margin: 0;
 }

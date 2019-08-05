@@ -11,7 +11,7 @@ const PostLink = ({ post }) => {
     <Link className={`${styles.link} no-hover`} to={post.frontmatter.path}>
       <div>
         <img src={post.frontmatter.image.childImageSharp.fluid.src} />
-        <h2>{post.frontmatter.title}</h2>
+        <div className={styles.header}>{post.frontmatter.title}</div>
         <small>{post.frontmatter.date}</small>
         <p className={styles.excerpt}>{post.excerpt}</p>
       </div>

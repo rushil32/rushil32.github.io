@@ -1,40 +1,76 @@
-@import '../styles/base';
+@import '../styles/lib';
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  margin-top: 2rem;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+
+  & > div {
+    flex: 1;
+  }
 }
 
 .info {
-  text-align: center;
-
-  img {
-    height: 100px;
-    @include animate('fadeIn');
-  }
-
   h1 {
     margin: 0;
-    @include animate('fadeInUp');
   }
 }
 
 .subheader {
   margin-top: 1rem;
   font-size: $font-md;
-  @include animate('fadeInUp');
 }
 
 .links {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-  @include animate('fadeInUp', 0.3s);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 15px;
 
-  li {
-    padding: 0 25px;
-    font-size: $font-sm;
+  @include breakpoint(xs) {
+    grid-template-columns: auto auto;
+  }
+
+  a {
+    background-color: map-get($theme-colors, secondary-dark);
+    padding: 15px;
+    color: white;
+    font-size: $font-xl;
+    font-weight: 600;
+    height: 140px;
+    line-height: 1;
+    transition: 0.3s;
+    opacity: 0.8;
+    
+    img {
+      height: 35px;
+    }
+    
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    &:nth-child(1) {
+      background-color: $github;
+    }
+
+    &:nth-child(2) {
+      background-color: $linkedin;
+    }
+
+    &:nth-child(3) {
+      background-color: map-get($map: $theme-colors, $key: primary);
+    }
+
+    &:nth-child(4) {
+      background-color: map-get($map: $theme-colors, $key: secondary);
+    }
+
+    &:nth-child(5) {
+      background-color: $behance;
+    }
   }
 }
