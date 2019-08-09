@@ -1,0 +1,82 @@
+@import '../../../styles/lib';
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 1;
+}
+
+.modal {
+  box-shadow: $shadow-2;
+  border-color: rgba(0, 0, 0, 0.05);
+  background: white;
+  width: $modal-md;
+  border-radius: 3px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+
+  @include breakpoint(xs) {
+    width: $modal-sm;
+  }
+}
+
+.header {
+  border-bottom: none; 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+  
+  i {
+    vertical-align: middle;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.close {
+  opacity: 0.6;
+  align-self: flex-start;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.body {
+  padding: 1rem;
+}
+
+.footer {
+  border-top: none;
+  background: darken($grey-100, 2%);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.icon {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: $grey-200;
+  border-radius: 50%;
+}

@@ -1,19 +1,23 @@
 import React from "react"
-import Layout from  '../components/layout';
+import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import styles from './styles/BlogTemplate.module.scss';
+import Banner from "../components/banner"
+import styles from "./styles/BlogTemplate.module.scss"
 
-export default function Template({
-  data,
-}) {
+export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
+  console.log(frontmatter);
   return (
     <Layout>
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1 className={styles.header}>{frontmatter.title}</h1>
-          <p className={styles.date}>{frontmatter.date}</p>
+          <Banner theme="secondary">
+            <div className={styles.header}>
+              <h1 className={styles.title}>{frontmatter.title}</h1>
+              <p className={styles.date}>{frontmatter.date}</p>
+            </div>
+          </Banner>
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: html }}
@@ -32,6 +36,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        author
       }
     }
   }

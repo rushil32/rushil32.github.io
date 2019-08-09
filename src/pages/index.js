@@ -9,6 +9,7 @@ import behanceIcon from "../images/logos/behance.svg"
 import speechIcon from "../images/icons/speech.svg"
 import ramenIcon from "../images/icons/ramen.svg"
 import resume from "./resume.pdf"
+import documentIcon from "../images/icons/document.svg"
 
 function renderLink(icon, text, url = "") {
   return (
@@ -37,7 +38,9 @@ const IndexPage = () => (
         <div className={indexStyles.subheader}>
           Frontend Software Engineer, UI Designer
         </div>
-        <p>rushil32@gmail.com</p>
+        <div className={indexStyles.email}>
+          <a href="mailto:rushil32@gmail.com" target="_blank">rushil32@gmail.com</a>
+        </div>
       </div>
       <div className={indexStyles.links}>
         {renderLink(githubIcon, "GitHub", "https://github.com/rushil32")}
@@ -49,7 +52,7 @@ const IndexPage = () => (
         {renderInternalLink(ramenIcon, "RamenUI", "/library")}
         {renderInternalLink(speechIcon, "Blog", "/blog")}
         {renderLink(behanceIcon, "Behance", "https://www.behance.net/rushil")}
-        {renderLink(behanceIcon, "Resume", resume)}
+        {renderLink(documentIcon, "Resume", resume)}
       </div>
     </div>
   </Layout>

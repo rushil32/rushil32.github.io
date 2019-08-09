@@ -2,15 +2,4 @@
 @import 'lib';
 @import 'typography';
 @import 'animate';
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-h1,
-h2,
-p {
-  margin: 0;
-}
+@import 'tables';

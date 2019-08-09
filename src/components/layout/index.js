@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { useSpring, animated } from 'react-spring'
 import Nav from '../nav';
 import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
@@ -30,7 +31,13 @@ const Layout = ({ children }) => {
       text: 'Picks',
       url: '/picks',
     }
-  ]
+  ];
+
+  const transition = useSpring({
+    config: { duration: 200 },
+    opacity: 1,
+    from: {opacity: 0}
+  });
 
   return (
     <div>
@@ -43,7 +50,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <animated.main style={transition}>{children}</animated.main>
         <footer>
           © {new Date().getFullYear()} Because 42
         </footer>

@@ -14,14 +14,23 @@
 }
 
 .info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
   h1 {
     margin: 0;
   }
 }
 
 .subheader {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-size: $font-md;
+}
+
+.email {
+  margin-top: 0.75rem;
 }
 
 .links {
@@ -31,6 +40,7 @@
 
   @include breakpoint(xs) {
     grid-template-columns: auto auto;
+    margin-top: 2rem;
   }
 
   a {
