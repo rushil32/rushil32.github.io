@@ -1,0 +1,23 @@
+@import '../../../styles/lib';
+
+.background {
+  position: fixed;
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: -1;
+  @include animate('fadeIn', .5s, 5s);
+}
+
+.credit {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: $grey-500;
+  font-size: $font-xs;
+  padding: 2px 8px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.05s);
+}

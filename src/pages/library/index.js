@@ -44,7 +44,7 @@ const LibraryPage = ({
   )
 
   return (
-    <Layout header="Ramen UI">
+    <Layout>
       <SEO title="Ramen UI" />
       <Banner>
         <img className={styles.headerIcon} src={ramenIcon} />

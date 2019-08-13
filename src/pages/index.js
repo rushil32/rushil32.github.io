@@ -93,7 +93,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className={indexStyles.container}>
         <div className={indexStyles.info}>
-          <h1>Rushil Saraogi</h1>
+          <h1>Gatsby Blog</h1>
           <div className={indexStyles.subheader}>
             Frontend Software Engineer, UI Designer
           </div>
@@ -109,7 +109,7 @@ const IndexPage = () => {
               key={items[index]}
               style={style}
             >
-              <animated.div>{renderLink(items[index], index)}</animated.div>
+              {renderLink(items[index], index)}
             </animated.div>
           ))}
         </div>
