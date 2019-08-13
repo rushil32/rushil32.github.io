@@ -10,15 +10,11 @@ import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 import { useSpring, animated } from "react-spring"
 import Nav from "../nav"
+import THEMES from "../../util/themes"
 import Background from "../background"
 import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
 import "../../styles/base.scss"
-
-const THEMES = {
-  default: "default",
-  dark: "dark"
-}
 
 const Layout = ({ children, theme = THEMES.default }) => {
   const transition = useSpring({
@@ -41,7 +37,7 @@ const Layout = ({ children, theme = THEMES.default }) => {
       >
         <animated.main style={transition}>{children}</animated.main>
       </div>
-      {theme === THEMES.dark && (<Background />)}
+      {theme === THEMES.image && (<Background />)}
     </div>
   )
 }

@@ -61,7 +61,8 @@ i:hover {
   cursor: pointer;
 }
 
-.dark {
+.dark,
+.image {
   h1,
   h2,
   h3 {
@@ -78,5 +79,12 @@ i:hover {
 
   p, li {
     color: $grey-500;
+  }
+
+  a {
+    &:not(:global(.no-hover)):hover {
+      text-decoration: underline;
+      color: map-get($theme-colors, secondary-dark);
+    }
   }
 }

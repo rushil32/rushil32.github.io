@@ -10,6 +10,11 @@
   li {
     margin: 0;
   }
+
+  @include breakpoint(xs) {
+    padding: 30px 10px 20px;
+    justify-content: center;
+  }
 }
 
 .menu {
@@ -53,7 +58,8 @@
   }
 }
 
-:global(.dark) {
+:global(.dark),
+:global(.image) {
   .link {
     color: $grey-500;
   }

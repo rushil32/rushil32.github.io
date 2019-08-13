@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import indexStyles from "./index.module.scss"
 import githubIcon from "../images/logos/github.svg"
 import linkedinIcon from "../images/logos/linkedin.svg"
+import THEMES from "../util/themes"
 import behanceIcon from "../images/logos/behance.svg"
 import speechIcon from "../images/icons/speech.svg"
 import ramenIcon from "../images/icons/ramen.svg"
@@ -89,7 +90,7 @@ const IndexPage = () => {
   })
 
   return (
-    <Layout theme="dark">
+    <Layout theme={THEMES.image}>
       <SEO title="Home" />
       <div className={indexStyles.container}>
         <div className={indexStyles.info}>
