@@ -9,15 +9,13 @@ export default function Template({ data }) {
   const { frontmatter, html } = markdownRemark
   console.log(frontmatter);
   return (
-    <Layout>
+    <Layout theme="dark">
       <div className="blog-post-container">
         <div className="blog-post">
-          <Banner theme="secondary">
-            <div className={styles.header}>
-              <h1 className={styles.title}>{frontmatter.title}</h1>
-              <p className={styles.date}>{frontmatter.date}</p>
-            </div>
-          </Banner>
+          <div className={styles.header}>
+            <h1 className={styles.title}>{frontmatter.title}</h1>
+            <p className={styles.date}>{frontmatter.date}</p>
+          </div>
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: html }}

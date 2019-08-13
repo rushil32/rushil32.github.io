@@ -16,7 +16,8 @@ const Blog = ({
   const trail = useTrail(edges.length, {
     config,
     opacity: 1,
-    from: { opacity: 0 },
+    transform: 'scale(1)',
+    from: { opacity: 0, transform: 'scale(0.95)' },
   })
 
   return (

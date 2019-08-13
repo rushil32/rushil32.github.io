@@ -60,3 +60,23 @@ a {
 i:hover {
   cursor: pointer;
 }
+
+.dark {
+  h1,
+  h2,
+  h3 {
+    color: white;
+  }
+
+  pre {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  code {
+    color: white;
+  }
+
+  p, li {
+    color: $grey-500;
+  }
+}

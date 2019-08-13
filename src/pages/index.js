@@ -84,7 +84,8 @@ const IndexPage = () => {
   const trail = useTrail(items.length, {
     config,
     opacity: 1,
-    from: { opacity: 0 },
+    transform: 'scale(1)',
+    from: { opacity: 0, transform: 'scale(0.9)' },
   })
 
   return (
