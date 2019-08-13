@@ -3,3 +3,11 @@
 @import 'typography';
 @import 'animate';
 @import 'tables';
+
+body {
+  transition: 0.5s;
+
+  &.dark {
+    background: black;
+  }
+}

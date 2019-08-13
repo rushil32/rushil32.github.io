@@ -1,4 +1,4 @@
-@import '../styles/lib';
+@import "../styles/lib";
 
 .container {
   display: flex;
@@ -21,12 +21,14 @@
 
   h1 {
     margin: 0;
+    color: white;
   }
 }
 
 .subheader {
   margin-top: 0.75rem;
   font-size: $font-md;
+  color: white;
 }
 
 .email {
@@ -35,15 +37,29 @@
 
 .links {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+
+  & > div:nth-child(1) {
+    grid-column: 1 / span 2;
+
+    @include breakpoint(xs) {
+      grid-column: 1 / span 1;
+    }
+  }
 
   @include breakpoint(xs) {
     grid-template-columns: auto auto;
     margin-top: 2rem;
   }
 
-  a {
+  .arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.3s;
+  }
+
+  .linkWrapper {
     background-color: map-get($theme-colors, secondary-dark);
     padding: 15px;
     color: white;
@@ -56,7 +72,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    
+
     img {
       height: 35px;
     }
@@ -64,34 +80,41 @@
     span {
       font-size: $font-sm;
     }
-    
+
     &:hover {
       transform: scale(1.05);
-    }
 
-    &:nth-child(1) {
-      background-color: $github;
-      grid-column: 1 / span 2;
-      
-      @include breakpoint(xs) {
-        grid-column: 1 / span 1;
+      .arrow {
+        opacity: 1;
+        transform: translateX(0px);
       }
     }
 
-    &:nth-child(2) {
+    &:global(.link1) {
+      background-color: $github;
+    }
+
+    &:global(.link2) {
       background-color: $linkedin;
     }
 
-    &:nth-child(3) {
-      background-color: map-get($map: $theme-colors, $key: primary);
+    &:global(.link3) {
+      background-color: map-get($theme-colors, primary);
     }
 
-    &:nth-child(4) {
-      background-color: map-get($map: $theme-colors, $key: secondary);
+    &:global(.link4) {
+      background-color: map-get($theme-colors, secondary);
     }
 
-    &:nth-child(5) {
+    &:global(.link5) {
       background-color: $behance;
     }
   }
+}
+
+.linkText {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }

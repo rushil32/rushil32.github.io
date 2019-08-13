@@ -20,13 +20,13 @@ const Modal = ({
     opacity: show ? 1 : 0,
     config: { duration: 150 },
     pointerEvents: show ? "auto" : "none",
-    from: { opacity: 0, pointerEvents: "none" },
+    from: { opacity: 0, pointerEvents: "none"},
   })
 
   return (
     <animated.div style={props}>
-      <div key={1} className={`${styles.backdrop} ${backdropClasses}`}>
-        <div className={`${styles.modal} ${modalClasses}`}>
+      <div key={1} className={`${styles.backdrop} ${backdropClasses}`} onClick={toggleModal}>
+        <div className={`${styles.modal} ${modalClasses}`} onClick={e => e.stopPropagation()}>
           <div className={styles.header}>
             <div className={styles.title}>
               <i className={`material-icons ${styles.icon}`}>{icon}</i>

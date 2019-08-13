@@ -3,33 +3,27 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styles from "./nav.module.scss"
 
-function renderLinks(links) {
-  return links.map((link, i) => (
-    <li key={i}>
+function renderLink(url, text) {
+  return (
+    <li>
       <Link
         className={`${styles.link} no-hover`}
-        to={link.url}
+        to={url}
         activeClassName="active"
       >
-        {link.text}
+        {text}
       </Link>
     </li>
-  ))
+  )
 }
 
 const Nav = ({ links, logo }) => {
-  const mid = Math.floor(links.length / 2)
-  const leftLinks = links.slice(0, mid)
-  const rightLinks = links.slice(mid)
-
   return (
     <div className={styles.container}>
       <ul className={styles.menu}>
-        {renderLinks(leftLinks)}
-        <li>
-          <img className={styles.logo} src={logo} />
-        </li>
-        {renderLinks(rightLinks)}
+        {renderLink('/', (<span>ME</span>))}
+        {renderLink('/blog', (<span>Blog</span>))}
+        {renderLink('/library', (<span>Ramen UI</span>))}
       </ul>
     </div>
   )

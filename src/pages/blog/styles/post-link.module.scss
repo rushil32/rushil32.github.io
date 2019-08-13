@@ -1,31 +1,29 @@
 @import '../../../styles/base';
 
 .link {
-  padding: 15px;
-  border-radius: 4px;
-
-  img {
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
+  padding: 20px;
+  transition: 0.2s;
+  display: block;
 
   small {
     text-transform: uppercase;
-    opacity: 0.75;
+    color: $grey-400;
   }
 
   &:hover {
-    background-color: $grey-100;
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
 .header {
   margin-bottom: 0px;
-  color: $black;
-  font-size: $font-md;
-  font-weight: 600;
+  color: white;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .excerpt {
   margin: 10px 0 0;
+  color: $grey-600;
 }

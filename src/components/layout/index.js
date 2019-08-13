@@ -6,42 +6,25 @@
  */
 
 import React from "react"
+import Helmet from "react-helmet"
 import PropTypes from "prop-types"
-import { useSpring, animated } from 'react-spring'
-import Nav from '../nav';
+import { useSpring, animated } from "react-spring"
+import Nav from "../nav"
 import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
 import "../../styles/base.scss"
 
-const Layout = ({ children }) => {
-  const navLinks = [
-    {
-      text: 'Me',
-      url: '/',
-    },
-    {
-      text: 'Ramen UI',
-      url: '/library',
-    },
-    {
-      text: 'Blog',
-      url: '/blog',
-    },
-    {
-      text: 'Picks',
-      url: '/picks',
-    }
-  ];
-
+const Layout = ({ children, theme = "default" }) => {
   const transition = useSpring({
     config: { duration: 200 },
     opacity: 1,
-    from: {opacity: 0}
-  });
+    from: { opacity: 0 },
+  })
 
   return (
     <div>
-      <Nav links={navLinks} logo={toriiLogo} />
+      <Helmet bodyAttributes={{ class: theme }} />
+      <Nav logo={toriiLogo} />
       <div
         style={{
           margin: `0 auto`,
@@ -51,9 +34,6 @@ const Layout = ({ children }) => {
         }}
       >
         <animated.main style={transition}>{children}</animated.main>
-        <footer>
-          © {new Date().getFullYear()} Because 42
-        </footer>
       </div>
     </div>
   )

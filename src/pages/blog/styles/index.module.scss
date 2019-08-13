@@ -1,11 +1,1 @@
 @import '../../../styles/base';
-
-.posts {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 1fr 1fr;
-
-  @include breakpoint(xs) {
-    grid-template-columns: auto;
-  }
-}
