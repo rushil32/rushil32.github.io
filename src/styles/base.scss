@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "~prismjs/themes/prism-okaidia";
 @import 'lib';
 @import 'typography';
 @import 'animate';
@@ -11,4 +12,8 @@ body {
   &.image {
     background: black;
   }
+}
+
+.dark hr {
+  background-color: rgba(255, 255, 255, 0.15);
 }

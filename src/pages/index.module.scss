@@ -44,12 +44,6 @@
     grid-column: 1 / span 2;
   }
 
-  & > div:nth-child(3) {
-    @include breakpoint(xs) {
-      grid-column: 1 / span 2;
-    }
-  }
-
   @include breakpoint(xs) {
     margin-top: 2rem;
   }

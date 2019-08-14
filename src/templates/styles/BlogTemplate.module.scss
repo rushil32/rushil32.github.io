@@ -1,18 +1,40 @@
+@import '../../styles/lib';
+
 .date {
-  margin: 0.75rem 0 0;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .header {
-  text-align: center;
+  h1 {
+    color: map-get($theme-colors, secondary-dark);
+  }
 }
 
 .content {
-  margin-top: 2rem;
+  padding: 2rem 1.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  margin-top: 1.5rem;
 
+  @include breakpoint(xs) {
+    padding: 1rem;
+  }
+  
   p,
   pre {
     margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem; 
+  }
+
+  h2:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+
+  a {
+    color: map-get($theme-colors, primary);
   }
 }

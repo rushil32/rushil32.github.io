@@ -10,7 +10,7 @@ const PostLink = ({ post }) => {
   return (
     <Link className={`${styles.link} no-hover`} to={post.frontmatter.path}>
       <div>
-        <div className={styles.header}>{post.frontmatter.title}</div>
+        <div className={styles.header} dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}></div>
         <small>{post.frontmatter.date}</small>
         <p className={styles.excerpt}>{post.excerpt}</p>
       </div>

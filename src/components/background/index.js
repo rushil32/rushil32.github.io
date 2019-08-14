@@ -25,7 +25,7 @@ const Background = () => {
 
   const backgroundStyle = {
     backgroundImage:
-      "linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(" +
+      "linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(" +
       url +
       ")",
     backgroundSize: "cover",
@@ -35,7 +35,7 @@ const Background = () => {
     <div className={styles.container}>
       <div className={styles.background} style={backgroundStyle}></div>
       <div className={styles.credit}>
-        Image from{" "}
+        Images from{" "}
         <a target="_blank" href={UNSPLASH_COLLECTION}>
           Unsplash
         </a>

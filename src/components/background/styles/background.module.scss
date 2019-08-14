@@ -7,7 +7,7 @@
   width: 100vw;
   top: 0;
   z-index: -1;
-  @include animate('fadeIn', .5s, 5s);
+  @include animate('fadeIn', .5s, 3.5s);
 }
 
 .background {

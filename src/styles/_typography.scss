@@ -18,16 +18,15 @@ h1 {
 h1,
 h3,
 p {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.3em;
 }
 
 h2 {
-  margin: 1.8em 0 .8em;
+  font-weight: 300;
 }
 
 h3 {
   font-size: $font-md;
-  font-weight: 500;
 }
 
 p, 
@@ -61,6 +60,12 @@ i:hover {
   cursor: pointer;
 }
 
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: $font-sm;
+  margin: 1rem 0;
+}
+
 .dark,
 .image {
   h1,
@@ -78,7 +83,7 @@ i:hover {
   }
 
   p, li {
-    color: $grey-500;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   a {

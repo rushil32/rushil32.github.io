@@ -1,31 +1,31 @@
 ---
-title: Animation with React Spring
+title: Animation with React Spring &#x1F3A9;
 date: 2019-08-07
 path: /blog/react-spring
 author: 'Rushil Saraogi'
 image: ../../../images/blog/rabbit-thumb.jpeg
 ---
 
-## What do you need to know?
+## The Basics
 
-- **One!** This is what we're talking about - https://www.react-spring.io/
-- **Two!** You'll need to install it (skipping this step makes the rest of it pretty complicated) -
+1. Find it here - https://www.react-spring.io/
+2. You'll need to install it (skipping this step makes the rest of it pretty complicated) -
 
-```
+```shell
 npm install --save-dev react-spring
 
 ```
 
 - And import it:
 
-```
+```javascript
 import { useSpring, animated } from "react-spring"
 ```
 
 
-- **Three**, you'll need to create an object that conforms to this not so intuitive API (https://www.react-spring.io/docs/hooks/api) so you can pass it to the animated element - 
+3. You'll need to create an object that conforms to this API (https://www.react-spring.io/docs/hooks/api) so you can pass it to the animated element - 
 
-```
+```javascript
 const props = useSpring({
   opacity: show ? 1 : 0
   pointerEvents: show ? 'auto' : 'none', 
@@ -39,9 +39,53 @@ This code snippet from a modal component essentially says that it should start a
 
 - **Four!** Wrap the element to be animated with a &nbsp;`<animated.div>`&nbsp; tag.
 
-```
+```javascript
 <animated.div style={props}>
   <p>This thing will fade in</p>
 </animated.div>
 ```
 Notice the object created in the last step is being passed in as a style object. &#9757;
+
+---
+
+## Trailing Animation
+
+One use case the spring library handles really well is trailing animation - where one elements start and end time is dependent on another. Traditionally this was done using delays and duration values in CSS. Here's an example of trailing animation using React Spring - https://rushil32.github.io.
+
+Steps to create trailing animation - 
+
+1. Import what you need, in this we add the `useTrail` hook - 
+
+```javascript
+import { useTrail, animated } from "react-spring"
+```
+
+2. Create a config, to be used with the animation - 
+
+```javascript
+const config = { mass: 5, tension: 2500, friction: 200 }
+```
+
+You could also use one of the preset values found at https://www.react-spring.io/docs/hooks/api under "Presets".
+
+3. Create the trail object - 
+
+```javascript
+const trail = useTrail(items.length, {
+  config,
+  opacity: 1,
+  transform: "scale(1)",
+  from: { opacity: 0, transform: "scale(0.9)" },
+})
+```
+
+
+4. Map the trail list to each element -
+
+```javascript
+{trail.map((style, index) => (
+  <animated.div key={items[index]} style={style}>
+    {renderLink(items[index], index)}
+  </animated.div>
+))}
+```
