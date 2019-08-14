@@ -85,8 +85,8 @@ const IndexPage = () => {
   const trail = useTrail(items.length, {
     config,
     opacity: 1,
-    transform: 'scale(1)',
-    from: { opacity: 0, transform: 'scale(0.9)' },
+    transform: "scale(1)",
+    from: { opacity: 0, transform: "scale(0.9)" },
   })
 
   return (
@@ -106,10 +106,7 @@ const IndexPage = () => {
         </div>
         <div className={indexStyles.links}>
           {trail.map((style, index) => (
-            <animated.div
-              key={items[index]}
-              style={style}
-            >
+            <animated.div key={items[index]} style={style}>
               {renderLink(items[index], index)}
             </animated.div>
           ))}

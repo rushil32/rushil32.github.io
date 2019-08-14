@@ -1,7 +1,7 @@
 const THEMES = {
   default: "default",
   dark: "dark",
-  image: "image"
+  image: "image",
 }
 
-export default THEMES;
+export default THEMES
