@@ -1,6 +1,6 @@
 @import '../../../styles/lib';
 
-.background {
+.container {
   position: fixed;
   background: black;
   height: 100vh;
@@ -8,6 +8,12 @@
   top: 0;
   z-index: -1;
   @include animate('fadeIn', .5s, 5s);
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  animation: movingImage 30s infinite  normal ease-in-out;
 }
 
 .credit {
@@ -23,5 +29,17 @@
 
   @include breakpoint(xs) {
     display: none;
+  }
+}
+
+@keyframes movingImage {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
