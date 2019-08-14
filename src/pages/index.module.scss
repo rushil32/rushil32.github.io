@@ -42,14 +42,15 @@
 
   & > div:nth-child(1) {
     grid-column: 1 / span 2;
+  }
 
+  & > div:nth-child(3) {
     @include breakpoint(xs) {
-      grid-column: 1 / span 1;
+      grid-column: 1 / span 2;
     }
   }
 
   @include breakpoint(xs) {
-    grid-template-columns: auto auto;
     margin-top: 2rem;
   }
 
@@ -73,8 +74,17 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include breakpoint(xs) {
+      padding: 9px;
+      height: unset;
+    }
+
     img {
       height: 35px;
+
+      @include breakpoint(xs) {
+        height: 25px;
+      }
     }
 
     span {

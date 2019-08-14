@@ -1,15 +1,24 @@
 import React, { useState } from "react"
 import styles from "./styles/background.module.scss"
 
-const UNSPLASH_RANDOM_OVERHEAD_IMAGE = "https://source.unsplash.com/collection/1668452/1600x900"
+const UNSPLASH_OVERHEAD_COLLECTION =
+  "https://unsplash.com/collections/981639/aerialdrone-captures"
+const UNSPLASH_SOURCE =
+  "https://source.unsplash.com/collection/" +
+  getCollectionId(UNSPLASH_OVERHEAD_COLLECTION) +
+  "/1600x900"
+
+function getCollectionId(url) {
+  return /collections\/(\w+)\//.exec(url)[1]
+}
 
 async function getBackground(setUrl) {
-  let res = await fetch(UNSPLASH_RANDOM_OVERHEAD_IMAGE)
-  setUrl(res.url);
+  let res = await fetch(UNSPLASH_SOURCE)
+  setUrl(res.url)
 }
 
 const Background = () => {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState("")
   getBackground(setUrl)
 
   const backgroundStyle = {
@@ -24,7 +33,7 @@ const Background = () => {
     <div className={styles.background} style={backgroundStyle}>
       <div className={styles.credit}>
         Image from{" "}
-        <a target="_blank" href="#">
+        <a target="_blank" href={UNSPLASH_OVERHEAD_COLLECTION}>
           Unsplash
         </a>
       </div>
