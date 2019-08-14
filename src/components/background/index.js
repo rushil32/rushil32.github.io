@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./styles/background.module.scss"
 
+const fetch = window.fetch;
 const UNSPLASH_OVERHEAD_COLLECTION =
   "https://unsplash.com/collections/981639/aerialdrone-captures"
 const UNSPLASH_SOURCE =
