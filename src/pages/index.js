@@ -106,7 +106,7 @@ const IndexPage = () => {
         </div>
         <div className={indexStyles.links}>
           {trail.map((style, index) => (
-            <animated.div key={items[index]} style={style}>
+            <animated.div key={index} style={style}>
               {renderLink(items[index], index)}
             </animated.div>
           ))}

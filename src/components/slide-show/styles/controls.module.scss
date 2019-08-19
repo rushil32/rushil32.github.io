@@ -1,0 +1,23 @@
+@import '../../../styles/lib';
+
+.controls {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 20px;
+  right: 50%;
+  width: 200px;
+  margin-right: -100px;
+
+  i {
+    color: white;
+    font-size: $font-xl;
+    opacity: 0.7;
+    user-select: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

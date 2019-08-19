@@ -1,9 +1,9 @@
 @import '../../styles/lib';
 
 .container {
-  padding: 50px 10px;
+  padding: 50px 1.0875rem;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 960px;
   display: flex;
   justify-content: flex-end;
 
@@ -19,6 +19,16 @@
 
 .menu {
   display: flex;
+
+  li + li {
+    margin: 0 0 0 50px;
+  }
+
+  li {
+    @include breakpoint(xs) {
+      margin: 0 20px;
+    }
+  }
 }
 
 .logo {
@@ -32,13 +42,8 @@
   font-size: $font-sm;
   color: $grey-900;
   font-weight: 600;
-  margin: 0 40px;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: 0.2s;
-
-  @include breakpoint(xs) {
-    margin: 0 20px;
-  }
 
   img {
     border-radius: 50%;

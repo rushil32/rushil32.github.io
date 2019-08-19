@@ -3,7 +3,6 @@ title: Animation with React Spring &#x1F3A9;
 date: 2019-08-07
 path: /blog/react-spring
 author: 'Rushil Saraogi'
-image: ../../../images/blog/rabbit-thumb.jpeg
 ---
 
 ## The Basics
@@ -22,8 +21,11 @@ npm install --save-dev react-spring
 import { useSpring, animated } from "react-spring"
 ```
 
+--split--
 
-3. You'll need to create an object that conforms to this API (https://www.react-spring.io/docs/hooks/api) so you can pass it to the animated element - 
+## Simple Animation
+
+You'll need to create an object that conforms to this API (https://www.react-spring.io/docs/hooks/api) so you can pass it to the animated element - 
 
 ```javascript
 const props = useSpring({
@@ -37,7 +39,9 @@ const props = useSpring({
 ```
 This code snippet from a modal component essentially says that it should start at opacity 0 with no pointer events and animate to an opacity of 1 and regular pointer events. This creates a simple fade in fade out effect for a modal.
 
-- **Four!** Wrap the element to be animated with a &nbsp;`<animated.div>`&nbsp; tag.
+--split--
+
+Wrap the element to be animated with a &nbsp;`<animated.div>`&nbsp; tag.
 
 ```javascript
 <animated.div style={props}>
@@ -46,29 +50,28 @@ This code snippet from a modal component essentially says that it should start a
 ```
 Notice the object created in the last step is being passed in as a style object. &#9757;
 
----
+--split--
 
 ## Trailing Animation
 
 One use case the spring library handles really well is trailing animation - where one elements start and end time is dependent on another. Traditionally this was done using delays and duration values in CSS. Here's an example of trailing animation using React Spring - https://rushil32.github.io.
 
-Steps to create trailing animation - 
+--split--
 
-1. Import what you need, in this we add the `useTrail` hook - 
+## Create trailing animation - 
 
 ```javascript
 import { useTrail, animated } from "react-spring"
 ```
 
-2. Create a config, to be used with the animation - 
+Create a config, to be used with the animation - 
 
 ```javascript
 const config = { mass: 5, tension: 2500, friction: 200 }
 ```
+--split--
 
-You could also use one of the preset values found at https://www.react-spring.io/docs/hooks/api under "Presets".
-
-3. Create the trail object - 
+Create the trail object - 
 
 ```javascript
 const trail = useTrail(items.length, {
@@ -78,9 +81,9 @@ const trail = useTrail(items.length, {
   from: { opacity: 0, transform: "scale(0.9)" },
 })
 ```
+--split--
 
-
-4. Map the trail list to each element -
+Map the trail list to each element -
 
 ```javascript
 {trail.map((style, index) => (

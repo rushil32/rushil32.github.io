@@ -20,12 +20,6 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: $grey-500;
-  font-size: $font-xs;
-  padding: 2px 8px;
-  border-radius: 40px;
-  background: rgba(255, 255, 255, 0.05s);
 
   @include breakpoint(xs) {
     display: none;

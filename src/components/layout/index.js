@@ -16,7 +16,13 @@ import toriiLogo from "../../images/logos/torii-color-2.svg"
 import "./layout.css"
 import "../../styles/base.scss"
 
-const Layout = ({ children, theme = THEMES.default }) => {
+const Layout = ({
+  children,
+  showNav = true,
+  noPadding = false,
+  noWidth = false,
+  theme = THEMES.default,
+}) => {
   const transition = useSpring({
     config: { duration: 200 },
     opacity: 1,
@@ -26,18 +32,18 @@ const Layout = ({ children, theme = THEMES.default }) => {
   return (
     <div>
       <Helmet bodyAttributes={{ class: theme }} />
-      <Nav logo={toriiLogo} />
+      {showNav && <Nav logo={toriiLogo} />}
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
+          maxWidth: noWidth ? 'unset' : 960,
+          padding: noPadding ? `0` : `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
         }}
       >
         <animated.main style={transition}>{children}</animated.main>
       </div>
-      {theme === THEMES.image && (<Background />)}
+      {theme === THEMES.image && <Background />}
     </div>
   )
 }

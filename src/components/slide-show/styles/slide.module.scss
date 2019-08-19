@@ -1,0 +1,28 @@
+@import "../../../styles/lib";
+
+.slide {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:not(:first-child) {
+    .content {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.5s);
+      padding: 30px;
+      
+      @include breakpoint(xs) {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 800px;
+
+  @include breakpoint(xs) {
+    max-width: 90vw;
+  }
+}

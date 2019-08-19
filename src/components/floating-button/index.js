@@ -5,7 +5,7 @@ import styles from './styles/floating-button.module.scss';
 const FloatingButton = ({ handleClick, icon }) => {
   return (
     <button className={styles.FloatingButton} onClick={handleClick}>
-      <i class="material-icons">{icon}</i>
+      <i className="material-icons">{icon}</i>
     </button>
   );
 }

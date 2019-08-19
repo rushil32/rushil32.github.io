@@ -18,6 +18,11 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  padding-right: 30px;
+
+  @include breakpoint(xs) {
+    padding: 0;
+  }
 
   h1 {
     margin: 0;

@@ -1,0 +1,33 @@
+@import '../../../styles/lib';
+
+.indicator {
+  position: fixed;
+  top: 20px;
+  width: 50px;
+  right: 50%;
+  margin-right: -50px;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+  
+  & > div {
+    flex: 0 0 100vw;
+  }
+}
+
+.closeButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  
+  i {
+    color: white;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

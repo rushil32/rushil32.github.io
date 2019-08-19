@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Tag from "../tag"
 import styles from "./styles/background.module.scss"
 
 const isClient = typeof window !== "undefined"
@@ -25,7 +26,7 @@ const Background = () => {
 
   const backgroundStyle = {
     backgroundImage:
-      "linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(" +
+      "linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7) ), url(" +
       url +
       ")",
     backgroundSize: "cover",
@@ -35,10 +36,12 @@ const Background = () => {
     <div className={styles.container}>
       <div className={styles.background} style={backgroundStyle}></div>
       <div className={styles.credit}>
-        Images from{" "}
-        <a target="_blank" href={UNSPLASH_COLLECTION}>
-          Unsplash
-        </a>
+        <Tag>
+          Images from{" "}
+          <a target="_blank" href={UNSPLASH_COLLECTION}>
+            Unsplash
+          </a>
+        </Tag>
       </div>
     </div>
   )
