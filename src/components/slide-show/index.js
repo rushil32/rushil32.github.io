@@ -4,6 +4,8 @@ import Slide from "./Slide"
 import Tag from "../tag"
 import styles from "./styles/slide-show.module.scss"
 
+const isClient = typeof window !== "undefined"
+
 function scroll(ele, left) {
   ele.scroll({
     left,
@@ -14,7 +16,7 @@ function scroll(ele, left) {
 const SlideShow = ({ slides = [], handleClose }) => {
   const container = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const viewportWidth = window.outerWidth
+  const viewportWidth = isClient ? window.outerWidth : 0
 
   const toggleLeft = () => setCurrentSlide(Math.max(0, currentSlide - 1))
   const toggleRight = () =>
