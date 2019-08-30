@@ -3,6 +3,7 @@ title: Animation with React Spring &#x1F3A9;
 date: 2019-08-07
 path: /blog/react-spring
 author: 'Rushil Saraogi'
+category: 'Animation'
 ---
 
 ## The Basics

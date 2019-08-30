@@ -1,0 +1,30 @@
+@import '../../../styles/base';
+
+.label {
+  border-radius: 40px;
+  padding: 1px 8px;
+  display: flex;
+  align-items: center;
+
+  i, span {
+    font-size: $font-xs;
+  }
+
+  i {
+    margin-right: 4px;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &:global(--white) {
+    background: white;
+
+    i,
+    span {
+      color: map-get($map: $theme-colors, $key: secondary-dark);
+    }
+  }
+}
