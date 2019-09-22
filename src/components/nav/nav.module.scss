@@ -2,17 +2,18 @@
 
 .container {
   padding: 50px 1.0875rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   max-width: 960px;
   display: flex;
   justify-content: flex-end;
-
+  
   li {
     margin: 0;
   }
-
+  
   @include breakpoint(xs) {
     padding: 30px 10px 20px;
+    margin: 0 auto 1.5rem;
     justify-content: center;
   }
 }

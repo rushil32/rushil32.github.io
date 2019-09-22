@@ -39,6 +39,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "push": "git push -u -f origin master && git push -u src master",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "start": "npm run develop",
     "serve": "gatsby serve",

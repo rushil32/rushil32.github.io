@@ -10,6 +10,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  @include breakpoint(xs) {
+    min-height: 0;
+  }
 
   small {
     text-transform: uppercase;
@@ -37,6 +41,10 @@
 .postInfo {
   display: flex;
   justify-content: space-between;
+
+  @include breakpoint(xs) {
+    margin-top: 30px;
+  }
 }
 
 .date {

@@ -2,7 +2,6 @@
 
 .container {
   display: flex;
-  margin-top: 2rem;
 
   @include breakpoint(xs) {
     flex-direction: column;

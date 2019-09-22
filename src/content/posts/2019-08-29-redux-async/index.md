@@ -1,9 +1,9 @@
 ---
 title: Async actions in redux
-date: 2019-08-18
+date: 2019-08-29
 path: /blog/redux-async
 author: 'Rushil Saraogi'
-category: 'React'
+category: 'Redux'
 ---
 
 ## Actions
